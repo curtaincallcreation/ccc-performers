@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FEEEDE">
+  <meta name="description" content="Curtain Call Creation Performers 兒童音樂劇體驗課程，讓小朋友由課室走上舞台。">
+  <title>Performers 兒童音樂劇體驗課程｜Curtain Call Creation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --scarlet: #c8102e;
+      --scarlet-deep: #a70d26;
+      --buttercream: #feeede;
+      --cream-light: #fff8f1;
+      --ink: #252525;
+      --muted: #6d655f;
+      --line: rgba(85, 54, 42, 0.12);
+      --white: #ffffff;
+      --green: #2f6b5f;
+      --orange: #f5822a;
+      --shadow: 0 18px 48px rgba(72, 39, 30, 0.10);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --page-width: 980px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: "Nunito", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--page-width));
+      margin-inline: auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 28px 0 54px;
+      background:
+        radial-gradient(circle at 8% 15%, rgba(245, 130, 42, 0.14) 0 4px, transparent 5px),
+        radial-gradient(circle at 92% 20%, rgba(200, 16, 46, 0.11) 0 6px, transparent 7px),
+        var(--buttercream);
+      isolation: isolate;
+    }
+
+    .hero::after {
+      position: absolute;
+      right: -110px;
+      bottom: -155px;
+      z-index: -1;
+      width: 290px;
+      height: 290px;
+      border: 46px solid rgba(200, 16, 46, 0.06);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .brand {
+      display: flex;
+      justify-content: center;
+    }
+
+    .brand img {
+      width: 132px;
+      height: auto;
+      mix-blend-mode: multiply;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin: 28px auto 0;
+      text-align: center;
+    }
+
+    .eyebrow,
+    .section-kicker {
+      margin: 0 0 10px;
+      color: var(--scarlet);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 9vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      line-height: 1.05;
+      text-wrap: balance;
+    }
+
+    h1 .programme-name {
+      color: var(--scarlet);
+    }
+
+    h1 .zh-title {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.64em;
+      letter-spacing: -0.03em;
+    }
+
+    .intro {
+      position: relative;
+      margin: -22px auto 0;
+      padding: 25px 22px;
+      border: 1px solid rgba(200, 16, 46, 0.08);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: 0 14px 38px rgba(87, 46, 34, 0.09);
+      text-align: center;
+    }
+
+    .intro p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: clamp(1.08rem, 4.8vw, 1.48rem);
+      font-weight: 800;
+      line-height: 1.5;
+      text-wrap: balance;
+    }
+
+    .intro .spark {
+      color: var(--orange);
+    }
+
+    .section {
+      padding: 68px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.75rem, 6vw, 2.55rem);
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+    }
+
+    .section-note {
+      display: none;
+      max-width: 320px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: right;
+    }
+
+    .video-frame {
+      position: relative;
+      display: grid;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      place-items: center;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent),
+        #282220;
+      box-shadow: var(--shadow);
+    }
+
+    .video-frame--portrait {
+      width: 100%;
+      max-width: 430px;
+      aspect-ratio: 9 / 16;
+      margin-inline: auto;
+      background: #000;
+    }
+
+    .video-frame--embed::before,
+    .video-frame--embed::after {
+      display: none;
+    }
+
+    .video-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-frame::before,
+    .video-frame::after {
+      position: absolute;
+      border-radius: 50%;
+      content: "";
+    }
+
+    .video-frame::before {
+      top: -35%;
+      left: -10%;
+      width: 55%;
+      aspect-ratio: 1;
+      border: 24px solid rgba(200, 16, 46, 0.18);
+    }
+
+    .video-frame::after {
+      right: -8%;
+      bottom: -35%;
+      width: 45%;
+      aspect-ratio: 1;
+      background: rgba(245, 130, 42, 0.10);
+    }
+
+    .video-placeholder {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .play-button {
+      position: relative;
+      width: 66px;
+      height: 66px;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 50%;
+      background: var(--scarlet);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+    }
+
+    .play-button::after {
+      position: absolute;
+      top: 50%;
+      left: 52%;
+      width: 0;
+      height: 0;
+      border-top: 9px solid transparent;
+      border-bottom: 9px solid transparent;
+      border-left: 14px solid var(--white);
+      content: "";
+      transform: translate(-40%, -50%);
+    }
+
+    .video-placeholder strong {
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .video-placeholder span {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .testimonial-band {
+      padding: 52px 0;
+      background: var(--buttercream);
+      text-align: center;
+    }
+
+    .testimonial-band p {
+      margin: 0;
+      font-size: clamp(1.55rem, 6vw, 2.6rem);
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      line-height: 1.25;
+      text-wrap: balance;
+    }
+
+    .testimonial-band .heart {
+      display: inline-block;
+      color: var(--scarlet);
+      transform: rotate(-7deg);
+    }
+
+    .video-testimonial {
+      background: var(--cream-light);
+    }
+
+    .messages-section {
+      overflow: hidden;
+      padding: 68px 0 74px;
+    }
+
+    .messages-intro {
+      max-width: 650px;
+      margin: 0 0 30px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .message-grid {
+      column-count: 1;
+      column-gap: 16px;
+    }
+
+    .testimonial-shot {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+      padding: 7px;
+      margin: 0 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--white);
+      box-shadow: 0 12px 30px rgba(76, 50, 40, 0.08);
+      break-inside: avoid;
+      vertical-align: top;
+    }
+
+    .testimonial-shot img {
+      width: 100%;
+      height: auto;
+      border-radius: 17px;
+    }
+
+    .cta-section {
+      padding: 0 0 72px;
+    }
+
+    .cta-card {
+      position: relative;
+      overflow: hidden;
+      padding: 38px 22px;
+      border-radius: var(--radius-lg);
+      color: var(--white);
+      background: #2d2927;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-card::before {
+      position: absolute;
+      top: -65px;
+      right: -55px;
+      width: 160px;
+      height: 160px;
+      border: 28px solid rgba(245, 130, 42, 0.18);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .cta-card h2 {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto 10px;
+      color: var(--white);
+    }
+
+    .cta-card p {
+      position: relative;
+      margin: 0 auto 24px;
+      color: rgba(255, 255, 255, 0.70);
+    }
+
+    .cta-button {
+      position: relative;
+      display: inline-flex;
+      width: 100%;
+      min-height: 58px;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      border: 2px solid var(--scarlet);
+      border-radius: 16px;
+      color: var(--white);
+      background: var(--scarlet);
+      box-shadow: 0 10px 24px rgba(200, 16, 46, 0.28);
+      font-size: 1rem;
+      font-weight: 900;
+      line-height: 1.4;
+      text-decoration: none;
+      transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    }
+
+    .cta-button:hover {
+      background: var(--scarlet-deep);
+      box-shadow: 0 14px 30px rgba(200, 16, 46, 0.34);
+      transform: translateY(-2px);
+    }
+
+    .cta-button:focus-visible,
+    .footer-link:focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 4px;
+    }
+
+    footer {
+      padding: 28px 0 32px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: var(--white);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-link {
+      color: var(--scarlet);
+      font-weight: 900;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    @media (min-width: 700px) {
+      .container {
+        width: min(100% - 72px, var(--page-width));
+      }
+
+      .hero {
+        padding: 42px 0 80px;
+      }
+
+      .brand img {
+        width: 160px;
+      }
+
+      .hero-copy {
+        margin-top: 36px;
+      }
+
+      .intro {
+        margin-top: -28px;
+        padding: 32px;
+      }
+
+      .section {
+        padding: 94px 0;
+      }
+
+      .section-note {
+        display: block;
+      }
+
+      .video-frame {
+        border-radius: 34px;
+      }
+
+      .play-button {
+        width: 78px;
+        height: 78px;
+      }
+
+      .testimonial-band {
+        padding: 68px 0;
+      }
+
+      .messages-section {
+        padding: 94px 0 104px;
+      }
+
+      .message-grid {
+        column-count: 2;
+        column-gap: 22px;
+      }
+
+      .testimonial-shot {
+        margin-bottom: 22px;
+      }
+
+      .cta-section {
+        padding-bottom: 104px;
+      }
+
+      .cta-card {
+        padding: 58px 54px;
+        border-radius: 34px;
+      }
+
+      .cta-button {
+        width: auto;
+        max-width: 620px;
+        padding-inline: 32px;
+        border-radius: 999px;
+        font-size: 1.12rem;
+      }
+
+      .footer-content {
+        flex-direction: row;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .footer-content span + span::before {
+        margin-right: 18px;
+        color: #c8beb8;
+        content: "•";
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .cta-button {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="brand">
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjAAAAH+CAYAAACC+zQ2AAAAAXNSR0IArs4c6QAAAHhlWElmTU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAIdpAAQAAAABAAAATgAAAAAAAA[...]"
+          alt="Curtain Call Creation"
+          width="560"
+          height="510"
+          fetchpriority="high"
+        >
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">Curtain Call Creation presents</p>
+        <h1>
+          <span class="programme-name">Performers</span>
+          <span class="zh-title">兒童音樂劇體驗課程</span>
+        </h1>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="intro" aria-label="課程簡介">
+        <p><span class="spark">✨</span> 讓小朋友由課室走上舞台，親身體驗完整音樂劇演出！</p>
+      </section>
+    </div>
+
+    <section class="section" aria-labelledby="class-highlights-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Inside the classroom</p>
+            <h2 id="class-highlights-title">課堂花絮</h2>
+          </div>
+          <p class="section-note">由排練、唱歌到角色演繹，睇吓小朋友點樣一步步投入舞台世界。</p>
+        </div>
+
+        <!-- Replace this placeholder with a responsive iframe or video element when the first video URL is ready. -->
+        <div class="video-frame" role="img" aria-label="課堂花絮影片預留位置">
+          <div class="video-placeholder">
+            <span class="play-button" aria-hidden="true"></span>
+            <strong>課堂花絮影片</strong>
+            <span>VIDEO COMING SOON</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial-band" aria-label="家長分享">
+      <div class="container">
+        <p>聽吓其他家長分享 <span class="heart">❤️</span></p>
+      </div>
+    </section>
+
+    <section class="section video-testimonial" aria-labelledby="parent-video-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Parent stories</p>
+            <h2 id="parent-video-title">家長真實感受</h2>
+          </div>
+          <p class="section-note">每一個細微轉變，都係小朋友勇敢踏出一步嘅證明。</p>
+        </div>
+
+        <div class="video-frame video-frame--portrait video-frame--embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/P8eSlMfJASw?rel=0"
+            title="Curtain Call Creation 家長分享影片"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="messages-section" aria-labelledby="message-title">
+      <div class="container">
+        <p class="section-kicker">Words from parents</p>
+        <h2 id="message-title">家長嘅窩心回應</h2>
+        <p class="messages-intro">真實嘅課堂體驗，最好由陪住小朋友成長嘅家長親自分享。</p>
+
+        <div class="message-grid" aria-label="WhatsApp 家長分享">
+          <figure class="testimonial-shot">
+            <img
+              src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBARXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAD9qADAAQAAAABAAACJgAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAA[...]"
+              alt="家長分享小朋友由怕醜到建立自信及完成舞台表演的 WhatsApp 訊息"
+              width="1014"
+              height="550"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <figure class="testimonial-shot">
+            <img
+              src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBARXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAACa6ADAAQAAAABAAABEwAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAA[...]"
+              alt="家長分享首次完整觀課及小朋友參與戲劇課程感受的 WhatsApp 訊息"
+              width="619"
+              height="275"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <figure class="testimonial-shot">
+            <img
+              src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBARXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAABk6ADAAQAAAABAAAAkQAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAA[...]"
+              alt="家長分享小朋友參加戲劇班後變得更有自信及主動的 WhatsApp 訊息"
+              width="403"
+              height="145"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <figure class="testimonial-shot">
+            <img
+              src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBARXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAABEKADAAQAAAABAAACKwAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAA[...]"
+              alt="家長分享觀看小朋友演出後的感動及多謝老師教導的 WhatsApp 訊息"
+              width="272"
+              height="555"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" id="contact" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-card">
+          <h2 id="cta-title">準備好俾小朋友踏出舞台第一步？</h2>
+          <p>課程及報名安排以學校公佈為準。</p>
+          <a class="cta-button" href="#contact">如有興趣，請向學校查詢報名詳情 😊</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <span>
+        Instagram
+        <a class="footer-link" href="https://www.instagram.com/curtaincallcreation/" target="_blank" rel="noopener noreferrer">@curtaincallcreation</a>
+      </span>
+      <span>© Curtain Call Creation 2026</span>
+    </div>
+  </footer>
+</body>
+</html>
