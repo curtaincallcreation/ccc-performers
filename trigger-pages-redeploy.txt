@@ -1,0 +1,5 @@
+Triggering Pages redeploy
+
+This file was created by Copilot to force GitHub Pages to rebuild and clear CDN caches.
+
+Timestamp: 2026-08-13T05:27:00Z
