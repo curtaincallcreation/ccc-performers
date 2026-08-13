@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#FEEEDE">
-  <meta name="description" content="Curtain Call Creation Performers 兒童音樂劇體驗課程，讓小朋友由課室走上舞台。">
-  <title>Performers 兒童音樂劇體驗課程｜Curtain Call Creation</title>
+  <meta name="description" content="Curtain Call Creation Performers 兒童音樂劇課程，讓小朋友由課室走上舞台。">
+  <title>Performers 兒童音樂劇課程｜Curtain Call Creation</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -241,53 +241,6 @@
       background: rgba(245, 130, 42, 0.10);
     }
 
-    .video-placeholder {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      padding: 16px;
-      color: var(--white);
-      text-align: center;
-    }
-
-    .play-button {
-      position: relative;
-      width: 66px;
-      height: 66px;
-      border: 1px solid rgba(255, 255, 255, 0.55);
-      border-radius: 50%;
-      background: var(--scarlet);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
-    }
-
-    .play-button::after {
-      position: absolute;
-      top: 50%;
-      left: 52%;
-      width: 0;
-      height: 0;
-      border-top: 9px solid transparent;
-      border-bottom: 9px solid transparent;
-      border-left: 14px solid var(--white);
-      content: "";
-      transform: translate(-40%, -50%);
-    }
-
-    .video-placeholder strong {
-      font-size: 1.05rem;
-      font-weight: 800;
-    }
-
-    .video-placeholder span {
-      color: rgba(255, 255, 255, 0.68);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-    }
-
     .testimonial-band {
       padding: 52px 0;
       background: var(--buttercream);
@@ -478,11 +431,6 @@
         border-radius: 34px;
       }
 
-      .play-button {
-        width: 78px;
-        height: 78px;
-      }
-
       .testimonial-band {
         padding: 68px 0;
       }
@@ -559,7 +507,7 @@
         <p class="eyebrow">Curtain Call Creation presents</p>
         <h1>
           <span class="programme-name">Performers</span>
-          <span class="zh-title">兒童音樂劇體驗課程</span>
+          <span class="zh-title">兒童音樂劇課程</span>
         </h1>
       </div>
     </div>
@@ -582,13 +530,15 @@
           <p class="section-note">由排練、唱歌到角色演繹，睇吓小朋友點樣一步步投入舞台世界。</p>
         </div>
 
-        <!-- Replace this placeholder with a responsive iframe or video element when the first video URL is ready. -->
-        <div class="video-frame" role="img" aria-label="課堂花絮影片預留位置">
-          <div class="video-placeholder">
-            <span class="play-button" aria-hidden="true"></span>
-            <strong>課堂花絮影片</strong>
-            <span>VIDEO COMING SOON</span>
-          </div>
+        <div class="video-frame video-frame--portrait video-frame--embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/n4lYILDsUHo?rel=0"
+            title="Curtain Call Creation 課堂花絮影片"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
     </section>
